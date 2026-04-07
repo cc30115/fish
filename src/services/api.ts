@@ -11,6 +11,10 @@ export interface EcosystemData {
 // Mock API calls to prepare for real backend integration
 export const api = {
   async fetchSpecies(): Promise<SpeciesData[]> {
+    if (!supabase) {
+      console.warn('Supabase not configured, using local data');
+      return ALL_SPECIES;
+    }
     const { data, error } = await supabase.from('species').select('*');
     if (error) {
       console.error('Error fetching from Supabase, falling back to local data', error);
