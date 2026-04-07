@@ -1,0 +1,26 @@
+/* Native thumb sliders styling so we override the default range handles specifically for dual tracking */
+input[type=range] {
+  pointer-events: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  width: 16px;
+  height: 32px;
+  border-radius: 4px;
+  background: white;
+  border: 2px solid cyan;
+  cursor: pointer;
+  margin-top: -12px; /* Center inside the visual bar */
+  box-shadow: 0 0 10px rgba(0,255,255,0.5);
+}
+input[type=range]::-moz-range-thumb {
+  pointer-events: auto;
+  width: 16px;
+  height: 32px;
+  border-radius: 4px;
+  background: white;
+  border: 2px solid cyan;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,255,255,0.5);
+}
